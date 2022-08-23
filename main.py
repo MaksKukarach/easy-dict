@@ -1,4 +1,4 @@
-import EasyDictionary
+from EasyDictionary import *
 
 def main():
     while True:
@@ -13,12 +13,8 @@ def main():
 
             word_list = list(map(lambda w: w.strip(), words_input.split(",")))
 
-            for i in range(len(word_list)):
-                word_set = EasyDictionary.get_word_set_from_oxford(word_list[i], True)
-                word_set = EasyDictionary.modify_examples(word_set)
-                word_list[i] = word_set
-                
-                print(word_list[i])
+            for word in word_list:
+                print(oxford_to_quizlet(word))
         
         if exit_flag == True: break
 
